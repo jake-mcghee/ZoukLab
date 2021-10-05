@@ -4,7 +4,7 @@ import androidx.room.*
 import com.example.zouklab.database.entities.Movement
 
 @Dao
-interface MovementDatabaseDao {
+interface MovementDao {
 
     @Insert
     fun insert(movement: Movement)
@@ -14,7 +14,7 @@ interface MovementDatabaseDao {
 
     @Query("SELECT * FROM movements ORDER BY name DESC")
     fun getAll(): List<Movement>
-    
+
     @Query("SELECT * FROM movements WHERE name LIKE :name")
     fun search(name: String): List<Movement>
 

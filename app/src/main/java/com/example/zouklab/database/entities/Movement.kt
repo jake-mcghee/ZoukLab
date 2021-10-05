@@ -1,13 +1,14 @@
-/**
- * Copyright Tandem Diabetes Care 2021.  All rights reserved.
- * Movement.kt
- * @summary:
- * @author: jmcghee
- */
+package com.example.zouklab.database.entities
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-package com.example.zouklab.database.Entities
+@Entity(tableName = "movements")
+data class Movement(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int,
 
-
-class Movement {
-}
+    @ColumnInfo(name = "name")
+    var name: String?
+)
