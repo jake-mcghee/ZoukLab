@@ -12,9 +12,9 @@ abstract class ZoukDatabase: RoomDatabase() {
     abstract val movementDao: MovementDao
 
     companion object {
+        const val DATABASE_NAME = "zouk_db"
         @Volatile
         private var INSTANCE: ZoukDatabase? = null
-        const val DATABASE_NAME = "zouk_db"
 
         fun getInstance(context: Context): ZoukDatabase {
             synchronized(this) {
